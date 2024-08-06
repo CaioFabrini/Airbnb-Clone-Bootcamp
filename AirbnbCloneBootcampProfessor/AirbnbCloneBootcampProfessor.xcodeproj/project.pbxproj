@@ -9,19 +9,39 @@
 /* Begin PBXBuildFile section */
 		344666B52C61AC4A00A2930A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344666B42C61AC4A00A2930A /* AppDelegate.swift */; };
 		344666B72C61AC4A00A2930A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344666B62C61AC4A00A2930A /* SceneDelegate.swift */; };
-		344666B92C61AC4A00A2930A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344666B82C61AC4A00A2930A /* ViewController.swift */; };
+		344666B92C61AC4A00A2930A /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344666B82C61AC4A00A2930A /* MainTabBarController.swift */; };
 		344666BE2C61AC4C00A2930A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 344666BD2C61AC4C00A2930A /* Assets.xcassets */; };
 		344666C12C61AC4C00A2930A /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 344666C02C61AC4C00A2930A /* Base */; };
+		344666CB2C61B95600A2930A /* ExploreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344666CA2C61B95600A2930A /* ExploreViewController.swift */; };
+		344666CE2C61B97000A2930A /* ExploreScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344666CD2C61B97000A2930A /* ExploreScreen.swift */; };
+		344666D12C61B9AC00A2930A /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344666D02C61B9AC00A2930A /* FavoriteViewController.swift */; };
+		344666D42C61B9C700A2930A /* FavoriteScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344666D32C61B9C700A2930A /* FavoriteScreen.swift */; };
+		344666D72C61BA1200A2930A /* TravelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344666D62C61BA1200A2930A /* TravelViewController.swift */; };
+		344666DA2C61BA3600A2930A /* TravelScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344666D92C61BA3600A2930A /* TravelScreen.swift */; };
+		344666DD2C61BA9900A2930A /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344666DC2C61BA9900A2930A /* MessageViewController.swift */; };
+		344666E02C61BAB400A2930A /* MessageScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344666DF2C61BAB400A2930A /* MessageScreen.swift */; };
+		344666E32C61BAEE00A2930A /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344666E22C61BAEE00A2930A /* ProfileViewController.swift */; };
+		344666E62C61BB0900A2930A /* ProfileScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344666E52C61BB0900A2930A /* ProfileScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		344666B12C61AC4A00A2930A /* AirbnbCloneBootcampProfessor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AirbnbCloneBootcampProfessor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		344666B42C61AC4A00A2930A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		344666B62C61AC4A00A2930A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		344666B82C61AC4A00A2930A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		344666B82C61AC4A00A2930A /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		344666BD2C61AC4C00A2930A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		344666C02C61AC4C00A2930A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		344666C22C61AC4C00A2930A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		344666CA2C61B95600A2930A /* ExploreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreViewController.swift; sourceTree = "<group>"; };
+		344666CD2C61B97000A2930A /* ExploreScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreScreen.swift; sourceTree = "<group>"; };
+		344666D02C61B9AC00A2930A /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
+		344666D32C61B9C700A2930A /* FavoriteScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteScreen.swift; sourceTree = "<group>"; };
+		344666D62C61BA1200A2930A /* TravelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelViewController.swift; sourceTree = "<group>"; };
+		344666D92C61BA3600A2930A /* TravelScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelScreen.swift; sourceTree = "<group>"; };
+		344666DC2C61BA9900A2930A /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
+		344666DF2C61BAB400A2930A /* MessageScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageScreen.swift; sourceTree = "<group>"; };
+		344666E22C61BAEE00A2930A /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		344666E52C61BB0900A2930A /* ProfileScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +74,112 @@
 		344666B32C61AC4A00A2930A /* AirbnbCloneBootcampProfessor */ = {
 			isa = PBXGroup;
 			children = (
+				344666E12C61BAE600A2930A /* Profile */,
+				344666DB2C61BA8A00A2930A /* Message */,
+				344666D52C61BA0200A2930A /* Travel */,
+				344666CF2C61B9A500A2930A /* Favorite */,
+				344666C92C61B95000A2930A /* Explore */,
+				344666C82C61B92600A2930A /* MainTabBarController */,
 				344666B42C61AC4A00A2930A /* AppDelegate.swift */,
 				344666B62C61AC4A00A2930A /* SceneDelegate.swift */,
-				344666B82C61AC4A00A2930A /* ViewController.swift */,
 				344666BD2C61AC4C00A2930A /* Assets.xcassets */,
 				344666BF2C61AC4C00A2930A /* LaunchScreen.storyboard */,
 				344666C22C61AC4C00A2930A /* Info.plist */,
 			);
 			path = AirbnbCloneBootcampProfessor;
+			sourceTree = "<group>";
+		};
+		344666C82C61B92600A2930A /* MainTabBarController */ = {
+			isa = PBXGroup;
+			children = (
+				344666B82C61AC4A00A2930A /* MainTabBarController.swift */,
+			);
+			path = MainTabBarController;
+			sourceTree = "<group>";
+		};
+		344666C92C61B95000A2930A /* Explore */ = {
+			isa = PBXGroup;
+			children = (
+				344666CC2C61B96400A2930A /* Screen */,
+				344666CA2C61B95600A2930A /* ExploreViewController.swift */,
+			);
+			path = Explore;
+			sourceTree = "<group>";
+		};
+		344666CC2C61B96400A2930A /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				344666CD2C61B97000A2930A /* ExploreScreen.swift */,
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
+		344666CF2C61B9A500A2930A /* Favorite */ = {
+			isa = PBXGroup;
+			children = (
+				344666D22C61B9BC00A2930A /* Screen */,
+				344666D02C61B9AC00A2930A /* FavoriteViewController.swift */,
+			);
+			path = Favorite;
+			sourceTree = "<group>";
+		};
+		344666D22C61B9BC00A2930A /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				344666D32C61B9C700A2930A /* FavoriteScreen.swift */,
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
+		344666D52C61BA0200A2930A /* Travel */ = {
+			isa = PBXGroup;
+			children = (
+				344666D82C61BA2900A2930A /* Screen */,
+				344666D62C61BA1200A2930A /* TravelViewController.swift */,
+			);
+			path = Travel;
+			sourceTree = "<group>";
+		};
+		344666D82C61BA2900A2930A /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				344666D92C61BA3600A2930A /* TravelScreen.swift */,
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
+		344666DB2C61BA8A00A2930A /* Message */ = {
+			isa = PBXGroup;
+			children = (
+				344666DE2C61BAAB00A2930A /* Screen */,
+				344666DC2C61BA9900A2930A /* MessageViewController.swift */,
+			);
+			path = Message;
+			sourceTree = "<group>";
+		};
+		344666DE2C61BAAB00A2930A /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				344666DF2C61BAB400A2930A /* MessageScreen.swift */,
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
+		344666E12C61BAE600A2930A /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				344666E42C61BB0100A2930A /* Screen */,
+				344666E22C61BAEE00A2930A /* ProfileViewController.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		344666E42C61BB0100A2930A /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				344666E52C61BB0900A2930A /* ProfileScreen.swift */,
+			);
+			path = Screen;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -134,8 +252,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				344666B92C61AC4A00A2930A /* ViewController.swift in Sources */,
+				344666CE2C61B97000A2930A /* ExploreScreen.swift in Sources */,
+				344666DA2C61BA3600A2930A /* TravelScreen.swift in Sources */,
+				344666CB2C61B95600A2930A /* ExploreViewController.swift in Sources */,
+				344666D72C61BA1200A2930A /* TravelViewController.swift in Sources */,
+				344666E62C61BB0900A2930A /* ProfileScreen.swift in Sources */,
+				344666DD2C61BA9900A2930A /* MessageViewController.swift in Sources */,
+				344666B92C61AC4A00A2930A /* MainTabBarController.swift in Sources */,
+				344666E32C61BAEE00A2930A /* ProfileViewController.swift in Sources */,
 				344666B52C61AC4A00A2930A /* AppDelegate.swift in Sources */,
+				344666E02C61BAB400A2930A /* MessageScreen.swift in Sources */,
+				344666D42C61B9C700A2930A /* FavoriteScreen.swift in Sources */,
+				344666D12C61B9AC00A2930A /* FavoriteViewController.swift in Sources */,
 				344666B72C61AC4A00A2930A /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
