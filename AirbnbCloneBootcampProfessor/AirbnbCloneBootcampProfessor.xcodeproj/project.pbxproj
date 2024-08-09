@@ -22,6 +22,7 @@
 		344666E02C61BAB400A2930A /* MessageScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344666DF2C61BAB400A2930A /* MessageScreen.swift */; };
 		344666E32C61BAEE00A2930A /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344666E22C61BAEE00A2930A /* ProfileViewController.swift */; };
 		344666E62C61BB0900A2930A /* ProfileScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344666E52C61BB0900A2930A /* ProfileScreen.swift */; };
+		3446670B2C65A8C200A2930A /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3446670A2C65A8C200A2930A /* SearchBarView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		344666DF2C61BAB400A2930A /* MessageScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageScreen.swift; sourceTree = "<group>"; };
 		344666E22C61BAEE00A2930A /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		344666E52C61BB0900A2930A /* ProfileScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScreen.swift; sourceTree = "<group>"; };
+		3446670A2C65A8C200A2930A /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 		344666B32C61AC4A00A2930A /* AirbnbCloneBootcampProfessor */ = {
 			isa = PBXGroup;
 			children = (
+				344667092C65A8AE00A2930A /* SearchBarView */,
 				344666E12C61BAE600A2930A /* Profile */,
 				344666DB2C61BA8A00A2930A /* Message */,
 				344666D52C61BA0200A2930A /* Travel */,
@@ -182,6 +185,14 @@
 			path = Screen;
 			sourceTree = "<group>";
 		};
+		344667092C65A8AE00A2930A /* SearchBarView */ = {
+			isa = PBXGroup;
+			children = (
+				3446670A2C65A8C200A2930A /* SearchBarView.swift */,
+			);
+			path = SearchBarView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -262,6 +273,7 @@
 				344666E32C61BAEE00A2930A /* ProfileViewController.swift in Sources */,
 				344666B52C61AC4A00A2930A /* AppDelegate.swift in Sources */,
 				344666E02C61BAB400A2930A /* MessageScreen.swift in Sources */,
+				3446670B2C65A8C200A2930A /* SearchBarView.swift in Sources */,
 				344666D42C61B9C700A2930A /* FavoriteScreen.swift in Sources */,
 				344666D12C61B9AC00A2930A /* FavoriteViewController.swift in Sources */,
 				344666B72C61AC4A00A2930A /* SceneDelegate.swift in Sources */,
