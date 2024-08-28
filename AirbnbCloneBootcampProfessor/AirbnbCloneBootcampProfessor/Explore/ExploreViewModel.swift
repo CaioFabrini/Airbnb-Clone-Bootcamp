@@ -22,6 +22,10 @@ class ExploreViewModel {
       TravelCategory(image: "snowflake", category: "Ártico"),
   ]
 
+  var getSelectedCategoryIndex: Int {
+    return categoryList.firstIndex(where: { $0.isSelected }) ?? 0
+  }
+
   var numberOfItems: Int {
     return categoryList.count
   }
@@ -32,6 +36,13 @@ class ExploreViewModel {
 
   func getCategory(indexPath: IndexPath) -> String {
     return loadCurrentTravelCategory(indexPath: indexPath).category
+  }
+
+  func setSelectedCategory(indexPath: IndexPath) {
+    let selectedPosition = indexPath.row
+    categoryList.indices.forEach { index in
+      categoryList[index].isSelected = index == selectedPosition
+    }
   }
 
 
