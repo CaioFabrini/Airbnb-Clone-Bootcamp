@@ -64,7 +64,7 @@ extension ExploreViewController: UITableViewDelegate, UITableViewDataSource {
 
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     guard let cell = tableView.dequeueReusableCell(withIdentifier: DestinationTableViewCell.identifier, for: indexPath) as? DestinationTableViewCell else { return UITableViewCell() }
-    
+    cell.setupCell(data: viewModel.loadCurrentPropertyData(indexPath: indexPath))
     return cell
   }
 }

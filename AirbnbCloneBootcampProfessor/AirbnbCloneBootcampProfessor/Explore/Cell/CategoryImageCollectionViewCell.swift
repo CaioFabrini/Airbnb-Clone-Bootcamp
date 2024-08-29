@@ -15,7 +15,6 @@ class CategoryImageCollectionViewCell: UICollectionViewCell {
     let imageView = UIImageView()
     imageView.translatesAutoresizingMaskIntoConstraints = false
     imageView.contentMode = .scaleToFill
-    imageView.image = UIImage(named: "castelo2")
     return imageView
   }()
 
@@ -40,5 +39,9 @@ class CategoryImageCollectionViewCell: UICollectionViewCell {
       imageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
       imageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
     ])
+  }
+
+  func setupCell(image: String) {
+    imageView.image = UIImage(named: image)
   }
 }

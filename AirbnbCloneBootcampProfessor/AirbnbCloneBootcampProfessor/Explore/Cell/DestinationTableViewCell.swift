@@ -10,6 +10,7 @@ import UIKit
 class DestinationTableViewCell: UITableViewCell {
 
   static let identifier: String = String(describing: DestinationTableViewCell.self)
+  var images: [String] = []
 
   lazy var collectionView: UICollectionView = {
     let layout = UICollectionViewFlowLayout()
@@ -114,7 +115,6 @@ class DestinationTableViewCell: UITableViewCell {
     print(#function)
   }
 
-
   override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
     super.init(style: style, reuseIdentifier: reuseIdentifier)
     selectionStyle = .none
@@ -179,16 +179,33 @@ class DestinationTableViewCell: UITableViewCell {
       heartButton.widthAnchor.constraint(equalToConstant: 34),
     ])
   }
+
+  func setupCell(data: PropertyDataModel) {
+    images = data.images
+    titleLabel.text = data.title
+    subTitleLabel.text = data.subtitle
+    priceLabel.text = data.price
+    ratingLabel.text = data.rating
+    dateLabel.text = data.date
+    pageControl.numberOfPages = data.images.count
+    pageControl.isHidden = data.images.count == 1
+    statusLabel.text = data.status
+    statusLabel.isHidden = data.status.isEmpty
+    collectionView.reloadData()
+  }
+
+
 }
 
 
 extension DestinationTableViewCell: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    return 3
+    return images.count
   }
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoryImageCollectionViewCell.identifier, for: indexPath) as? CategoryImageCollectionViewCell else { return UICollectionViewCell() }
+    cell.setupCell(image: images[indexPath.row])
     return cell
   }
 
