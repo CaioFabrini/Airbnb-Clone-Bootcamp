@@ -168,5 +168,13 @@ class ExploreViewModel {
     }
   }
 
+  var numberOfRowsPropertyData: Int {
+    return properties.count
+  }
+
+  func loadCurrentPropertyData(indexPath: IndexPath) -> PropertyDataModel {
+    return properties[indexPath.row]
+  }
+
 
 }

@@ -71,7 +71,7 @@ class ExploreScreen: UIView {
   lazy var tableView: UITableView = {
     let tableView = UITableView()
     tableView.translatesAutoresizingMaskIntoConstraints = false
-    // TO DO: REGISTER
+    tableView.register(DestinationTableViewCell.self, forCellReuseIdentifier: DestinationTableViewCell.identifier)
     tableView.backgroundColor = .white
     tableView.separatorStyle = .none
     return tableView
