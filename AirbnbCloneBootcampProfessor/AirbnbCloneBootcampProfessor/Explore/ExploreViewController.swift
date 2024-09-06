@@ -20,6 +20,7 @@ class ExploreViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
+    viewModel.fetchCategoryListMock()
     screen?.configCollectionViewProtocols(delegate: self, dataSource: self)
     screen?.configTableViewProtocols(delegate: self, dataSource: self)
   }
