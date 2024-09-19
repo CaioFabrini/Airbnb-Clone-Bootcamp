@@ -21,7 +21,7 @@ class ExploreViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     viewModel.delegate = self
-    viewModel.fetchAllMockRequest()
+    viewModel.fetchAllRequest()
   }
 }
 

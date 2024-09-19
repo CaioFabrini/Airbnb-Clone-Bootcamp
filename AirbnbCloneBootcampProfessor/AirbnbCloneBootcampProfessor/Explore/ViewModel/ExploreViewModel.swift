@@ -26,6 +26,13 @@ class ExploreViewModel {
     }
   }
 
+  func fetchAllRequest() {
+    fetchPropertiesList { [weak self] in
+      guard let self else { return }
+      fetchCategoryList()
+    }
+  }
+
   func fetchPropertiesListMock(completion: @escaping () -> Void) {
     LocalFileReader.loadJSON(fileName: "place", type: [PropertyDataModel].self) { [weak self] result in
       guard let self else { return }
@@ -35,7 +42,7 @@ class ExploreViewModel {
         completion()
       case .failure(let failure):
         delegate?.failure(errorMessage: failure.errorDescription ?? "")
-        return 
+        return
       }
     }
   }
@@ -66,6 +73,19 @@ class ExploreViewModel {
     }
   }
 
+  func fetchPropertiesList(completion: @escaping () -> Void) {
+    ExploreService.fetchPropertyDataModelList() { [weak self] result in
+      guard let self else { return }
+      switch result {
+      case .success(let success):
+        properties = success
+        completion()
+      case .failure(let failure):
+        delegate?.failure(errorMessage: failure.errorDescription ?? "")
+        return
+      }
+    }
+  }
 
   var getSelectedCategoryIndex: Int {
     return categoryList.firstIndex(where: { $0.isSelected }) ?? 0

@@ -10,7 +10,7 @@ import Foundation
 class ExploreService {
 
   static func fetchCategoryList(completion: @escaping (Result<[TravelCategory], NetworkError>) -> Void) {
-    let request = APIRequest(url: "https://run.mocky.io/v3/a8b13066-183e-4081-8873-d72dd62ddd43")
+    let request = APIRequest(url: "https://run.mocky.io/v3/6aa6d605-9606-4b59-ae34-e48a8c912fc5")
 
     // Nesse caso podemos fazer de 2 formas
 
@@ -28,5 +28,8 @@ class ExploreService {
     APIClient.shared.request(request: request, decodeType: [TravelCategory].self, completion: completion)
   }
 
-
+  static func fetchPropertyDataModelList(completion: @escaping (Result<[PropertyDataModel], NetworkError>) -> Void) {
+    let request = APIRequest(url: "https://run.mocky.io/v3/159cab80-eb7e-4596-8793-fc75e1baa445")
+    APIClient.shared.request(request: request, decodeType: [PropertyDataModel].self, completion: completion)
+  }
 }
