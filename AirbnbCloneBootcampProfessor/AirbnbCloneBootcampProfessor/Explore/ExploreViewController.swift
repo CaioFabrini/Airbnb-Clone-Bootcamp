@@ -21,7 +21,8 @@ class ExploreViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     viewModel.delegate = self
-    viewModel.fetchCategoryListMock()
+//    viewModel.fetchCategoryListMock()
+    viewModel.fetchCategoryList()
     screen?.configTableViewProtocols(delegate: self, dataSource: self)
   }
 }

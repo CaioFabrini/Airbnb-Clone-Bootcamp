@@ -142,17 +142,31 @@ class ExploreViewModel {
   private var categoryList: [TravelCategory] = []
 
   func fetchCategoryListMock() {
-    ServiceMock.loadJSON(fileName: "category", type: [TravelCategory].self) { [weak self] result in
+    LocalFileReader.loadJSON(fileName: "category", type: [TravelCategory].self) { [weak self] result in
       guard let self else { return }
       switch result {
       case .success(let success):
         categoryList = success
         delegate?.success()
       case .failure(let failure):
-        delegate?.failure(errorMessage: failure.localizedDescription)
+        delegate?.failure(errorMessage: failure.errorDescription ?? "")
       }
     }
   }
+
+  func fetchCategoryList() {
+    ExploreService.fetchCategoryList() { [weak self] result in
+      guard let self else { return }
+      switch result {
+      case .success(let success):
+        categoryList = success
+        delegate?.success()
+      case .failure(let failure):
+        delegate?.failure(errorMessage: failure.errorDescription ?? "")
+      }
+    }
+  }
+
 
   var getSelectedCategoryIndex: Int {
     return categoryList.firstIndex(where: { $0.isSelected }) ?? 0
