@@ -25,6 +25,10 @@
 		342C996F2C9BABFB00065F76 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342C99612C9BABFB00065F76 /* HTTPMethod.swift */; };
 		342C99742C9BAF6F00065F76 /* ExploreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342C99732C9BAF6900065F76 /* ExploreService.swift */; };
 		342C99762C9BB3F100065F76 /* place.json in Resources */ = {isa = PBXBuildFile; fileRef = 342C99752C9BB3F100065F76 /* place.json */; };
+		342C99792C9CF93900065F76 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342C99782C9CF93400065F76 /* LoginViewController.swift */; };
+		342C997B2C9CF96500065F76 /* LoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342C997A2C9CF96500065F76 /* LoginScreen.swift */; };
+		342C99802C9CF9D500065F76 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342C997F2C9CF9CD00065F76 /* LoginViewModel.swift */; };
+		342C99822C9CFEA400065F76 /* RegisterButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342C99812C9CFEA400065F76 /* RegisterButtonView.swift */; };
 		344666B52C61AC4A00A2930A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344666B42C61AC4A00A2930A /* AppDelegate.swift */; };
 		344666B72C61AC4A00A2930A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344666B62C61AC4A00A2930A /* SceneDelegate.swift */; };
 		344666B92C61AC4A00A2930A /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344666B82C61AC4A00A2930A /* MainTabBarController.swift */; };
@@ -63,6 +67,10 @@
 		342C99632C9BABFB00065F76 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		342C99732C9BAF6900065F76 /* ExploreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreService.swift; sourceTree = "<group>"; };
 		342C99752C9BB3F100065F76 /* place.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = place.json; sourceTree = "<group>"; };
+		342C99782C9CF93400065F76 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		342C997A2C9CF96500065F76 /* LoginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreen.swift; sourceTree = "<group>"; };
+		342C997F2C9CF9CD00065F76 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		342C99812C9CFEA400065F76 /* RegisterButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterButtonView.swift; sourceTree = "<group>"; };
 		344666B12C61AC4A00A2930A /* AirbnbCloneBootcampProfessor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AirbnbCloneBootcampProfessor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		344666B42C61AC4A00A2930A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		344666B62C61AC4A00A2930A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -219,6 +227,33 @@
 			path = Service;
 			sourceTree = "<group>";
 		};
+		342C99772C9CF92300065F76 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				342C997E2C9CF9C500065F76 /* ViewModel */,
+				342C997C2C9CF9B300065F76 /* Screen */,
+				342C99782C9CF93400065F76 /* LoginViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		342C997C2C9CF9B300065F76 /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				342C997A2C9CF96500065F76 /* LoginScreen.swift */,
+				342C99812C9CFEA400065F76 /* RegisterButtonView.swift */,
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
+		342C997E2C9CF9C500065F76 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				342C997F2C9CF9CD00065F76 /* LoginViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		344666A82C61AC4A00A2930A = {
 			isa = PBXGroup;
 			children = (
@@ -238,6 +273,7 @@
 		344666B32C61AC4A00A2930A /* AirbnbCloneBootcampProfessor */ = {
 			isa = PBXGroup;
 			children = (
+				342C99772C9CF92300065F76 /* Login */,
 				342C99652C9BABFB00065F76 /* Service */,
 				345D64A72C8A831500919C47 /* Resource */,
 				344667092C65A8AE00A2930A /* SearchBarView */,
@@ -453,6 +489,7 @@
 				344666CE2C61B97000A2930A /* ExploreScreen.swift in Sources */,
 				3410120C2C7D5CA9008999BC /* CategoryCollectionViewCell.swift in Sources */,
 				344666DA2C61BA3600A2930A /* TravelScreen.swift in Sources */,
+				342C99822C9CFEA400065F76 /* RegisterButtonView.swift in Sources */,
 				344666CB2C61B95600A2930A /* ExploreViewController.swift in Sources */,
 				344666D72C61BA1200A2930A /* TravelViewController.swift in Sources */,
 				344666E62C61BB0900A2930A /* ProfileScreen.swift in Sources */,
@@ -460,8 +497,10 @@
 				344666B92C61AC4A00A2930A /* MainTabBarController.swift in Sources */,
 				344666E32C61BAEE00A2930A /* ProfileViewController.swift in Sources */,
 				341012112C7D641E008999BC /* TravelCategory.swift in Sources */,
+				342C99802C9CF9D500065F76 /* LoginViewModel.swift in Sources */,
 				341012152C7FFBED008999BC /* DestinationTableViewCell.swift in Sources */,
 				344666B52C61AC4A00A2930A /* AppDelegate.swift in Sources */,
+				342C99792C9CF93900065F76 /* LoginViewController.swift in Sources */,
 				341012172C800866008999BC /* CategoryImageCollectionViewCell.swift in Sources */,
 				344666E02C61BAB400A2930A /* MessageScreen.swift in Sources */,
 				342C99742C9BAF6F00065F76 /* ExploreService.swift in Sources */,
@@ -469,6 +508,7 @@
 				3446670B2C65A8C200A2930A /* SearchBarView.swift in Sources */,
 				342C99662C9BABFB00065F76 /* HTTPClient.swift in Sources */,
 				342C99672C9BABFB00065F76 /* APIClient.swift in Sources */,
+				342C997B2C9CF96500065F76 /* LoginScreen.swift in Sources */,
 				342C99682C9BABFB00065F76 /* EmptyResponse.swift in Sources */,
 				342C99692C9BABFB00065F76 /* NetworkError.swift in Sources */,
 				342C996A2C9BABFB00065F76 /* RequestBuilder.swift in Sources */,

@@ -65,6 +65,7 @@ extension ExploreViewController: UICollectionViewDataSource, UICollectionViewDel
     // Atualizando a posição ANTIGA e ATUALIZANDO a posição que o usuário selecionou
     collectionView.reloadItems(at: [oldIndexPath, indexPath])
     collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+    screen?.tableView.reloadData()
   }
 }
 

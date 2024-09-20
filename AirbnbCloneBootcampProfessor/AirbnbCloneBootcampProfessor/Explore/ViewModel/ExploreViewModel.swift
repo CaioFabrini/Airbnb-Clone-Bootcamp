@@ -17,6 +17,7 @@ class ExploreViewModel {
   weak var delegate: ExploreViewModelProtocol?
 
   private var properties: [PropertyDataModel] = []
+  private var filterProperties: [PropertyDataModel] = []
   private var categoryList: [TravelCategory] = []
 
   func fetchAllMockRequest() {
@@ -39,6 +40,7 @@ class ExploreViewModel {
       switch result {
       case .success(let success):
         properties = success
+        filterProperties = success
         completion()
       case .failure(let failure):
         delegate?.failure(errorMessage: failure.errorDescription ?? "")
@@ -79,12 +81,17 @@ class ExploreViewModel {
       switch result {
       case .success(let success):
         properties = success
+        filterProperties = success
         completion()
       case .failure(let failure):
         delegate?.failure(errorMessage: failure.errorDescription ?? "")
         return
       }
     }
+  }
+
+  var getSelectedCategory: TravelCategory {
+    return categoryList.first(where: { $0.isSelected }) ?? categoryList[0]
   }
 
   var getSelectedCategoryIndex: Int {
@@ -108,13 +115,23 @@ class ExploreViewModel {
     categoryList.indices.forEach { index in
       categoryList[index].isSelected = index == selectedPosition
     }
+    filterPropertiesList()
+  }
+
+  func filterPropertiesList() {
+    let category = getSelectedCategory.category
+    if category.lowercased() == "icônicos" {
+      filterProperties = properties
+    } else {
+      filterProperties = properties.filter({ $0.category.uppercased() == category.uppercased() })
+    }
   }
 
   var numberOfRowsPropertyData: Int {
-    return properties.count
+    return filterProperties.count
   }
 
   func loadCurrentPropertyData(indexPath: IndexPath) -> PropertyDataModel {
-    return properties[indexPath.row]
+    return filterProperties[indexPath.row]
   }
 }
