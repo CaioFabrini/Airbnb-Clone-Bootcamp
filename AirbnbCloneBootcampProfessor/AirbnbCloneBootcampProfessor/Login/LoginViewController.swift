@@ -9,6 +9,7 @@ import UIKit
 class LoginViewController: UIViewController {
 
   var screen: LoginScreen?
+  var viewModel = LoginViewModel()
 
   override func viewWillAppear(_ animated: Bool) {
     navigationController?.isNavigationBarHidden = true
@@ -23,12 +24,11 @@ class LoginViewController: UIViewController {
     super.viewDidLoad()
     screen?.delegate = self
   }
-
 }
 
 extension LoginViewController: LoginScreenProtocol {
   func tappedSignIn() {
-    navigationController?.pushViewController(MainTabBarController(), animated: true)
+    viewModel.signInWithEmailAndPassword(email: screen?.emailTextField.text ?? "", password: screen?.passwordTextField.text ?? "")
   }
 
   func tappedCreateAccount() {
@@ -36,10 +36,10 @@ extension LoginViewController: LoginScreenProtocol {
   }
 
   func tappedGoogle() {
-    print(#function)
+    viewModel.signInWithGoogle(viewController: self)
   }
 
   func tappedFacebook() {
-    print(#function)
+    viewModel.signInWithFacebook(viewController: self)
   }
 }
