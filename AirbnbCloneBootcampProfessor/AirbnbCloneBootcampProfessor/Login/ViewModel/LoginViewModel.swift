@@ -11,26 +11,38 @@ import GoogleSignIn
 import FirebaseCore
 import FacebookLogin
 
+protocol LoginViewModelProtocol: AnyObject {
+  func successLogin()
+  func failureLogin()
+}
+
 class LoginViewModel {
 
+  private weak var delegate: LoginViewModelProtocol?
+
+  public func delegate(delegate: LoginViewModelProtocol?) {
+    self.delegate = delegate
+  }
+
+  func createUserWithEmailAndPassword(email: String, password: String) {
+    FirestoreManager.shared.createUserWithEmailAndPassword(email: email, password: password, name: "Caio") { result in
+      switch result {
+        case .success:
+        FirestoreManager.shared.saveJsonDataOnFirebase()
+      case .failure(let error):
+        print(error.localizedDescription)
+      }
+    }
+  }
+
   func signInWithEmailAndPassword(email: String, password: String) {
-    Auth.auth().signIn(withEmail: email, password: password) { result, error in
-      guard error == nil else {
+    Auth.auth().signIn(withEmail: email, password: password) { [weak self] result, error in
+      guard let self, error == nil else {
         print(error?.localizedDescription ?? "")
+        self?.delegate?.failureLogin()
         return
       }
-
-      print("ID User-> \(result?.user.uid ?? "")")
-      print("sucesso!!")
-      RemoteConfigManager.shared.fetchRemoteConfig() { value in
-        if value {
-          print("Sucesso RemoteConfigManager")
-         let isEnableGoogleButton = RemoteConfigManager.shared.getBoolValue(key: "EnableGoogleButton")
-          print(isEnableGoogleButton)
-        } else {
-          print("Error RemoteConfigManager")
-        }
-      }
+      delegate?.successLogin()
     }
   }
 

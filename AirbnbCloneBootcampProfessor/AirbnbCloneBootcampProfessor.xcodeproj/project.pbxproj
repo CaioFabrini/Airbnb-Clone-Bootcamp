@@ -37,6 +37,9 @@
 		342C9A072CA381F500065F76 /* FacebookLogin in Frameworks */ = {isa = PBXBuildFile; productRef = 342C9A062CA381F500065F76 /* FacebookLogin */; };
 		342C9A0A2CA396D100065F76 /* FirebaseRemoteConfig in Frameworks */ = {isa = PBXBuildFile; productRef = 342C9A092CA396D100065F76 /* FirebaseRemoteConfig */; };
 		342C9A0D2CA3970900065F76 /* RemoteConfigManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342C9A0C2CA3970200065F76 /* RemoteConfigManager.swift */; };
+		3431D45D2CAE09E5002C68AB /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 3431D45C2CAE09E5002C68AB /* FirebaseFirestore */; };
+		3431D4612CAE0B57002C68AB /* FirebaseFirestoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3431D4602CAE0B4D002C68AB /* FirebaseFirestoreManager.swift */; };
+		3431D4642CAE11F3002C68AB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3431D4632CAE11F3002C68AB /* User.swift */; };
 		344666B52C61AC4A00A2930A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344666B42C61AC4A00A2930A /* AppDelegate.swift */; };
 		344666B72C61AC4A00A2930A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344666B62C61AC4A00A2930A /* SceneDelegate.swift */; };
 		344666B92C61AC4A00A2930A /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344666B82C61AC4A00A2930A /* MainTabBarController.swift */; };
@@ -81,6 +84,8 @@
 		342C99812C9CFEA400065F76 /* RegisterButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterButtonView.swift; sourceTree = "<group>"; };
 		342C9A012CA3799100065F76 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		342C9A0C2CA3970200065F76 /* RemoteConfigManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteConfigManager.swift; sourceTree = "<group>"; };
+		3431D4602CAE0B4D002C68AB /* FirebaseFirestoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseFirestoreManager.swift; sourceTree = "<group>"; };
+		3431D4632CAE11F3002C68AB /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		344666B12C61AC4A00A2930A /* AirbnbCloneBootcampProfessor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AirbnbCloneBootcampProfessor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		344666B42C61AC4A00A2930A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		344666B62C61AC4A00A2930A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -113,6 +118,7 @@
 				342C9A0A2CA396D100065F76 /* FirebaseRemoteConfig in Frameworks */,
 				342C99FE2CA3786900065F76 /* GoogleSignIn in Frameworks */,
 				342C9A052CA381F500065F76 /* FacebookCore in Frameworks */,
+				3431D45D2CAE09E5002C68AB /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,6 +291,31 @@
 			path = RemoteConfigManager;
 			sourceTree = "<group>";
 		};
+		3431D45E2CAE0B36002C68AB /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				3431D45F2CAE0B40002C68AB /* FirebaseFirestore */,
+				342C9A0B2CA396EF00065F76 /* RemoteConfigManager */,
+			);
+			path = Firebase;
+			sourceTree = "<group>";
+		};
+		3431D45F2CAE0B40002C68AB /* FirebaseFirestore */ = {
+			isa = PBXGroup;
+			children = (
+				3431D4602CAE0B4D002C68AB /* FirebaseFirestoreManager.swift */,
+			);
+			path = FirebaseFirestore;
+			sourceTree = "<group>";
+		};
+		3431D4622CAE11EC002C68AB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3431D4632CAE11F3002C68AB /* User.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		344666A82C61AC4A00A2930A = {
 			isa = PBXGroup;
 			children = (
@@ -305,7 +336,8 @@
 		344666B32C61AC4A00A2930A /* AirbnbCloneBootcampProfessor */ = {
 			isa = PBXGroup;
 			children = (
-				342C9A0B2CA396EF00065F76 /* RemoteConfigManager */,
+				3431D4622CAE11EC002C68AB /* Model */,
+				3431D45E2CAE0B36002C68AB /* Firebase */,
 				342C99772C9CF92300065F76 /* Login */,
 				342C99652C9BABFB00065F76 /* Service */,
 				345D64A72C8A831500919C47 /* Resource */,
@@ -526,6 +558,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3431D4612CAE0B57002C68AB /* FirebaseFirestoreManager.swift in Sources */,
 				344666CE2C61B97000A2930A /* ExploreScreen.swift in Sources */,
 				3410120C2C7D5CA9008999BC /* CategoryCollectionViewCell.swift in Sources */,
 				344666DA2C61BA3600A2930A /* TravelScreen.swift in Sources */,
@@ -543,6 +576,7 @@
 				344666B52C61AC4A00A2930A /* AppDelegate.swift in Sources */,
 				342C99792C9CF93900065F76 /* LoginViewController.swift in Sources */,
 				341012172C800866008999BC /* CategoryImageCollectionViewCell.swift in Sources */,
+				3431D4642CAE11F3002C68AB /* User.swift in Sources */,
 				344666E02C61BAB400A2930A /* MessageScreen.swift in Sources */,
 				342C99742C9BAF6F00065F76 /* ExploreService.swift in Sources */,
 				341012132C7FEAA3008999BC /* PropertyDataModel.swift in Sources */,
@@ -840,6 +874,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 342C99F92CA3728100065F76 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseRemoteConfig;
+		};
+		3431D45C2CAE09E5002C68AB /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 342C99F92CA3728100065F76 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
