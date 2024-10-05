@@ -40,6 +40,7 @@
 		3431D45D2CAE09E5002C68AB /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 3431D45C2CAE09E5002C68AB /* FirebaseFirestore */; };
 		3431D4612CAE0B57002C68AB /* FirebaseFirestoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3431D4602CAE0B4D002C68AB /* FirebaseFirestoreManager.swift */; };
 		3431D4642CAE11F3002C68AB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3431D4632CAE11F3002C68AB /* User.swift */; };
+		3431D4672CAF7354002C68AB /* FavoriteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3431D4662CAF734B002C68AB /* FavoriteViewModel.swift */; };
 		344666B52C61AC4A00A2930A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344666B42C61AC4A00A2930A /* AppDelegate.swift */; };
 		344666B72C61AC4A00A2930A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344666B62C61AC4A00A2930A /* SceneDelegate.swift */; };
 		344666B92C61AC4A00A2930A /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344666B82C61AC4A00A2930A /* MainTabBarController.swift */; };
@@ -86,6 +87,7 @@
 		342C9A0C2CA3970200065F76 /* RemoteConfigManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteConfigManager.swift; sourceTree = "<group>"; };
 		3431D4602CAE0B4D002C68AB /* FirebaseFirestoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseFirestoreManager.swift; sourceTree = "<group>"; };
 		3431D4632CAE11F3002C68AB /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		3431D4662CAF734B002C68AB /* FavoriteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewModel.swift; sourceTree = "<group>"; };
 		344666B12C61AC4A00A2930A /* AirbnbCloneBootcampProfessor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AirbnbCloneBootcampProfessor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		344666B42C61AC4A00A2930A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		344666B62C61AC4A00A2930A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -316,6 +318,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		3431D4652CAF7344002C68AB /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				3431D4662CAF734B002C68AB /* FavoriteViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		344666A82C61AC4A00A2930A = {
 			isa = PBXGroup;
 			children = (
@@ -390,6 +400,7 @@
 		344666CF2C61B9A500A2930A /* Favorite */ = {
 			isa = PBXGroup;
 			children = (
+				3431D4652CAF7344002C68AB /* ViewModel */,
 				344666D22C61B9BC00A2930A /* Screen */,
 				344666D02C61B9AC00A2930A /* FavoriteViewController.swift */,
 			);
@@ -570,6 +581,7 @@
 				344666DD2C61BA9900A2930A /* MessageViewController.swift in Sources */,
 				344666B92C61AC4A00A2930A /* MainTabBarController.swift in Sources */,
 				344666E32C61BAEE00A2930A /* ProfileViewController.swift in Sources */,
+				3431D4672CAF7354002C68AB /* FavoriteViewModel.swift in Sources */,
 				341012112C7D641E008999BC /* TravelCategory.swift in Sources */,
 				342C99802C9CF9D500065F76 /* LoginViewModel.swift in Sources */,
 				341012152C7FFBED008999BC /* DestinationTableViewCell.swift in Sources */,

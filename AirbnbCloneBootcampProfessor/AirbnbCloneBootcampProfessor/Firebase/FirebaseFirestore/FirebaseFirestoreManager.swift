@@ -90,15 +90,15 @@ class FirestoreManager {
 
   func saveJsonDataOnFirebase() {
     // Primeira coisa é verificar se já existe os dados no firebase
-   getPlaceFromFirebase { result in
+    getPlaceFromFirebase { result in
       switch result {
       case .success(let places):
         print(places)
         print("Já existe os dados no firebase")
       case .failure(_):
-        fetchPropertiesListMock { result in
+        self.fetchPropertiesListMock { result in
           switch result {
-            case .success(let properties):
+          case .success(let properties):
             self.saveJsonDataOnFirebase(properties: properties)
           case .failure(_):
             print("Erro ao buscar os dados")
@@ -145,12 +145,11 @@ class FirestoreManager {
       }
     }
   }
-}
 
   func fetchPropertiesListMock(completion: @escaping (Result<[PropertyDataModel],Error>) -> Void) {
     LocalFileReader.loadJSON(fileName: "place", type: [PropertyDataModel].self) { result in
       switch result {
-        case .success(let properties):
+      case .success(let properties):
         completion(.success(properties))
       case .failure(let error):
         completion(.failure(error))
@@ -158,9 +157,88 @@ class FirestoreManager {
     }
   }
 
+  // Verificar se o meu place especifico é favorito!
+  func isPropertyFavorite(id: Int, completion: @escaping (Bool) -> Void) {
+    getUserDocument { result in
+      switch result {
+      case .success(let document):
+        do {
+          let userData = try document.data(as: User.self)
+          let isFavorite = userData.favorite.contains(id)
+          print("É favorito o id \(id): \(isFavorite)")
+          completion(isFavorite)
+        } catch {
+          print("Deu error")
+          completion(false)
+        }
+      case .failure:
+        print("Deu error")
+        completion(false)
+      }
+    }
+  }
+
+  // Adicionar/Remover favorito do BD
+  func toggleFavoriteProperty(id: Int, completion: @escaping (Result<Void,Error>) -> Void) {
+    getUserDocument { result in
+      switch result {
+      case .success(let document):
+        do {
+          var userData = try document.data(as: User.self)
+          if let index = userData.favorite.firstIndex(of: id) {
+            userData.favorite.remove(at: index)
+          } else {
+            userData.favorite.append(id)
+          }
+          try document.reference.setData(from: userData)
+
+          completion(.success(()))
+        } catch {
+          completion(.failure(error))
+        }
+      case .failure(let error):
+        completion(.failure(error))
+      }
+    }
+  }
 
 
+  // Listen -> receber qualquer alteração do objeto User.favorite
 
+  func listenToFavoriteProprieties(completion: @escaping (Result<[PropertyDataModel],Error>) -> Void) -> ListenerRegistration? {
+    guard let currentUserID else {
+      let error = NSError(domain: "FirestoreManager", code: 1, userInfo: nil)
+      completion(.failure(error))
+      return nil
+    }
 
-
-
+    let userDocument = firestore.collection("main").document("user").collection(currentUserID).document("userData")
+    return userDocument.addSnapshotListener { documentSnapshot, error in
+      if let error {
+        completion(.failure(error))
+        return
+      } else if let document = documentSnapshot, document.exists {
+        do {
+          let userData = try document.data(as: User.self)
+          self.getPlaceFromFirebase { result in
+            switch result {
+            case .success(let allPlaces):
+              let listFavorite = allPlaces.filter({ userData.favorite.contains($0.id)})
+              return completion(.success(listFavorite))
+            case .failure(let error):
+              completion(.failure(error))
+              return
+            }
+          }
+        } catch {
+          completion(.failure(error))
+          return
+        }
+      } else {
+        let error = NSError(domain: "FirestoreManager", code: 1, userInfo: nil)
+        completion(.failure(error))
+        return
+      }
+    }
+  }
+}
